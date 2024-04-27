@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+
+import django_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -26,7 +28,7 @@ SECRET_KEY = "django-insecure-&f)p+7m^ih%m2!jr534bxfa3hwrfm6m7*ut$_(4)kzyc9%clg+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["backproject.herokuapp.com"]
 
 # Application definition
 
@@ -117,12 +119,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+django_heroku.settings(locals())
 
 MEDIA_URL = "media/"
 
