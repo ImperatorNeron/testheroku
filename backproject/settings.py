@@ -127,7 +127,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(), logging=False)
 
 MEDIA_URL = "media/"
 
