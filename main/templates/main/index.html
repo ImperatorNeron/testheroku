@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'backproject/css/main.css' %}">
+</head>
+<body>
+<div class="wrapper">
+    {% for test in tests %}
+    <img src="{{ test.photo.url }}" alt="{{ test.name }}">
+    {% endfor %}
+    <img src="{% static 'backproject/images/IMG_5366.jpg' %}">
+    <div class="element"></div>
+</div>
+</body>
+</html>
