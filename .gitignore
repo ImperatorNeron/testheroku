@@ -4,7 +4,6 @@
 .vscode
 .idea
 
-media/
 fixtures/
 
 # Byte-compiled / optimized / DLL files
